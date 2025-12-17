@@ -1,293 +1,414 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>哈爾濱亞布力雪鄉5日深度遊_清海寶貝們</title>
-<style>
-  :root {
-    --primary: #0056b3; /* 深海藍 */
-    --accent: #00c6ff; /* 冰雪亮藍 */
-    --text-dark: #333;
-    --text-light: #666;
-    --bg-color: #f0f4f8;
-    --white: #ffffff;
-    --warning-bg: #fff3cd;
-    --warning-text: #856404;
-    --highlight-bg: #e3f2fd;
-    --tip-bg: #f5f5f5; /* 輕灰色背景 */
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈爾濱亞布力雪鄉5日深度遊_清海寶貝們</title>
+    <style>
+        :root {
+            --primary: #0056b3; /* 深海藍 */
+            --accent: #00c6ff; /* 冰雪亮藍 */
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-color: #f0f4f8;
+            --white: #ffffff;
+            --warning-bg: #fff3cd;
+            --warning-text: #856404;
+            --highlight-bg: #e3f2fd;
+            --tip-bg: #f5f5f5; /* 輕灰色背景 */
+        }
 
-  body {
-    font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--bg-color);
-    margin: 0;
-    padding: 20px;
-    color: var(--text-dark);
-    line-height: 1.6;
-  }
+        body {
+            font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 15px;
-    overflow: hidden;
-  }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
 
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #0056b3, #00c6ff);
-    color: white;
-    padding: 40px 20px 20px 20px; 
-    text-align: center;
-    position: relative;
-    padding-top: 20px; 
-  }
-  header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
-  header p { margin-top: 10px; opacity: 0.9; }
-  .tag { background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-top: 10px; }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0056b3, #00c6ff);
+            color: white;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            position: relative;
+            padding-top: 20px;
+        }
 
-  /* Avatar Styling */
-  .avatar-container {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    /* 刪除 background: #e74c3c; */
-    /* 添加以下三行用於背景圖片 */
-    background-image: url('image/scene_01.jpg'); /* <-- 修改這裡 */
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto 15px auto; 
-    box-shadow: 0 0 0 4px var(--white), 0 0 10px rgba(0,0,0,0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .avatar-initials {
-    color: var(--white);
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1;
-  }
+            header h1 {
+                margin: 0;
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
 
-  /* Overview Section */
-  .overview-box {
-    padding: 25px;
-    background: #fff;
-    border-bottom: 5px solid #f0f4f8;
-  }
-  .reason-card {
-    background: var(--highlight-bg);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-left: 5px solid var(--primary);
-  }
-  .reason-card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; }
-  
-  /* Quick Summary Table */
-  .summary-table-wrapper { overflow-x: auto; }
-  .summary-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    margin-top: 10px;
-  }
-  .summary-table th { background: #f1f1f1; text-align: left; padding: 10px; color: #555; }
-  .summary-table td { border-bottom: 1px solid #eee; padding: 10px; }
-  .summary-table tr:last-child td { border-bottom: none; }
-  .summary-day { font-weight: bold; color: var(--primary); width: 50px; }
+            header p {
+                margin-top: 10px;
+                opacity: 0.9;
+            }
 
-  /* Image Placeholders */
-  .img-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 5px;
-    padding: 5px;
-    background: #eee;
-  }
-  .img-box {
-    height: 150px;
-    background-color: #ccc;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .img-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    font-size: 0.7rem;
-    padding: 3px;
-    text-align: center;
-  }
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
 
-  /* Timeline Content */
-  .day-section { border-bottom: 1px solid #eee; }
-  
-  .day-header {
-    padding: 20px;
-    background: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background 0.3s;
-  }
-  .day-header:hover { background: #f8f9fa; }
-  
-  .day-badge {
-    background: var(--primary);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-right: 15px;
-  }
-  .day-title { font-weight: bold; font-size: 1.1rem; flex-grow: 1; }
-  .toggle-btn { font-size: 1.5rem; color: var(--accent); }
+        /* Avatar Styling */
+        .avatar-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* 刪除 background: #e74c3c; */
+            /* 添加以下三行用於背景圖片 */
+            background-image: url('image/scene_01.jpg'); /* <-- 修改這裡 */
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 0 0 4px var(--white), 0 0 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-  .day-details {
-    display: none; /* Hidden by default */
-    padding: 0 20px 30px 20px;
-    background: #fff;
-    animation: fadeIn 0.5s;
-  }
-  .day-details.active { display: block; }
+        .avatar-initials {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
 
-  /* Detail Styling */
-  .spot-highlight {
-    color: var(--primary);
-    font-weight: bold;
-    font-size: 1.05rem;
-    margin-top: 15px;
-    display: block;
-  }
-  .desc-text {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    text-align: justify;
-    margin-bottom: 10px;
-  }
+        /* Overview Section */
+        .overview-box {
+            padding: 25px;
+            background: #fff;
+            border-bottom: 5px solid #f0f4f8;
+        }
 
-  /* Info Boxes */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 15px 0;
-    font-size: 0.9rem;
-  }
-  .info-item {
-    background: #f4f8fb;
-    padding: 10px;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent);
-  }
+        .reason-card {
+            background: var(--highlight-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary);
+        }
 
-  .warm-tips {
-    background-color: var(--warning-bg);
-    color: var(--warning-text);
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    border: 1px dashed #d3b95f;
-  }
-  .warm-tips h4 { margin: 0 0 5px 0; display: flex; align-items: center; }
-  .warm-tips ul { margin: 5px 0 0 20px; padding: 0; }
-  .warm-tips li { margin-bottom: 5px; }
+            .reason-card h3 {
+                margin-top: 0;
+                color: var(--primary);
+                font-size: 1.1rem;
+            }
+
+        /* Quick Summary Table */
+        .summary-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+            .summary-table th {
+                background: #f1f1f1;
+                text-align: left;
+                padding: 10px;
+                color: #555;
+            }
+
+            .summary-table td {
+                border-bottom: 1px solid #eee;
+                padding: 10px;
+            }
+
+            .summary-table tr:last-child td {
+                border-bottom: none;
+            }
+
+        .summary-day {
+            font-weight: bold;
+            color: var(--primary);
+            width: 50px;
+        }
+
+        /* Image Placeholders */
+        .img-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 5px;
+            padding: 5px;
+            background: #eee;
+        }
+
+        .img-box {
+            height: 150px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .img-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px;
+            text-align: center;
+        }
+
+        /* Timeline Content */
+        .day-section {
+            border-bottom: 1px solid #eee;
+        }
+
+        .day-header {
+            padding: 20px;
+            background: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s;
+        }
+
+            .day-header:hover {
+                background: #f8f9fa;
+            }
+
+        .day-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .day-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+
+        .toggle-btn {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .day-details {
+            display: none; /* Hidden by default */
+            padding: 0 20px 30px 20px;
+            background: #fff;
+            animation: fadeIn 0.5s;
+        }
+
+            .day-details.active {
+                display: block;
+            }
+
+        /* Detail Styling */
+        .spot-highlight {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .desc-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        /* Info Boxes */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .info-item {
+            background: #f4f8fb;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .warm-tips {
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px dashed #d3b95f;
+        }
+
+            .warm-tips h4 {
+                margin: 0 0 5px 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .warm-tips ul {
+                margin: 5px 0 0 20px;
+                padding: 0;
+            }
+
+            .warm-tips li {
+                margin-bottom: 5px;
+            }
 
 
-  /* Precautions Section Styling */
-  .precautions-section {
-    padding: 30px;
-    background: var(--tip-bg);
-    border-top: 1px solid #ddd;
-  }
-  .precautions-section h2 {
-    color: #e74c3c; /* 紅色標題 */
-    border-bottom: 2px solid #e74c3c;
-    padding-bottom: 10px;
-    margin-top: 0;
-    font-size: 1.4rem;
-  }
-  .precautions-group {
-    margin-bottom: 25px;
-    padding: 15px;
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  .precautions-group h3 {
-    color: var(--primary);
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-  .precautions-group ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  .precautions-group li {
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
-    color: var(--text-dark);
-  }
-  .precautions-group li::before {
-    content: "•";
-    color: #e74c3c;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-  .tip-highlight {
-    color: #e74c3c;
-    font-weight: bold;
-  }
+        /* Precautions Section Styling */
+        .precautions-section {
+            padding: 30px;
+            background: var(--tip-bg);
+            border-top: 1px solid #ddd;
+        }
+
+            .precautions-section h2 {
+                color: #e74c3c; /* 紅色標題 */
+                border-bottom: 2px solid #e74c3c;
+                padding-bottom: 10px;
+                margin-top: 0;
+                font-size: 1.4rem;
+            }
+
+        .precautions-group {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+            .precautions-group h3 {
+                color: var(--primary);
+                font-size: 1.1rem;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .precautions-group ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                font-size: 0.9rem;
+            }
+
+            .precautions-group li {
+                margin-bottom: 8px;
+                padding-left: 20px;
+                position: relative;
+                color: var(--text-dark);
+            }
+
+                .precautions-group li::before {
+                    content: "•";
+                    color: #e74c3c;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                    margin-left: -1em;
+                }
+
+        .tip-highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
 
 
-  /* Footer Costs */
-  .cost-section { padding: 30px; background: #f8f9fa; }
-  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 10px; }
-  .cost-table th, .cost-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
-  .total-price { font-size: 1.5rem; color: #e74c3c; text-align: center; margin: 20px 0; font-weight: bold; }
+        /* Footer Costs */
+        .cost-section {
+            padding: 30px;
+            background: #f8f9fa;
+        }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
 
-  /* RWD */
-  @media (max-width: 600px) {
-    .info-grid { grid-template-columns: 1fr; }
-    .summary-table th:nth-child(3), .summary-table td:nth-child(3) { display: none; } /* Hide transport on mobile */
-  }
-</style>
+            .cost-table th, .cost-table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+            }
+
+        .total-price {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RWD */
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-table th:nth-child(3), .summary-table td:nth-child(3) {
+                display: none;
+            }
+            /* Hide transport on mobile */
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <header>
-    <div class="avatar-container">
-      <span class="avatar-initials"> </span> 
-      <span class="avatar-initials"> </span> 
-    </div>
-    
-    <div class="tag">VIP 清海寶貝們 定製遊</div>
-    <h1>哈爾濱、中國雪鄉、亞布力滑雪、夢幻家園、冰雪大世界雙飛5日遊</h1>
-    <p>這個冬天一起去雪鄉看雪</p>
+    <div class="container">
+        <header>
+            <div class="avatar-container">
+                <span class="avatar-initials"> </span>
+                <span class="avatar-initials"> </span>
+            </div>
 
-          <div style="margin-top: 15px;">
-            <a href="itinerary.pdf" target="_blank" style="
+            <div class="tag">VIP 清海寶貝們 定製遊</div>
+            <h1>哈爾濱、中國雪鄉、亞布力滑雪、夢幻家園、冰雪大世界雙飛5日遊</h1>
+            <p>2025這個冬天一起去雪鄉看雪❤️</p>
+
+            <div style="margin-top: 15px;">
+                <a href="itinerary.pdf" target="_blank" style="
     display: inline-block;
     padding: 8px 20px;
     background-color: rgba(255,255,255,0.2);
@@ -298,353 +419,386 @@
     font-size: 0.9rem;
     transition: all 0.3s;
   ">📄 查看原始 PDF 行程表</a>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <a href="itinerary2.doc" target="_blank" style="
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  ">📄 查看原始注意事項</a>
+            </div>
+
+        </header>
+
+        <div class="overview-box">
+            <div class="reason-card">
+                <h3>❄️ 產品推薦理由</h3>
+                <p><strong>邂逅童話雪世界：</strong>沒有人能逃脫雪鄉的美，這裡有你無法割舍的東北情懷。</p>
+                <p style="margin-top:10px;">
+                    <strong>至尊景點一網打盡：</strong><br>
+                    中國雪鄉、森林小火車、亞布力滑雪、中央大街、冰雪畫廊、夢幻家園、哈爾濱冰雪大世界...特色景點一次滿足！
+                </p>
+            </div>
+
+            <section style="margin: 20px; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="color: #e74c3c; margin-top: 0;">🎒 出發前別忘了！(點擊可勾選)</h3>
+                <div style="font-size: 0.95rem; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <label><input type="checkbox"> 護照/台胞證</label>
+                    <label><input type="checkbox"> 保溫瓶 (必備！)</label>
+                    <label><input type="checkbox"> 發熱衣/褲</label>
+                    <label><input type="checkbox"> 防滑雪地靴</label>
+                    <label><input type="checkbox"> 暖暖包/暖足貼</label>
+                    <label><input type="checkbox"> 行動電源</label>
+                    <label><input type="checkbox"> 常備藥品</label>
+                    <label><input type="checkbox"> 太陽眼鏡</label>
+                </div>
+            </section>
+
+
+
+            <h3 style="margin-bottom: 10px; color:#333;">行程(可按+號展開)</h3>
+            <div class="summary-table-wrapper">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>天數</th>
+                            <th>行程概況</th>
+                            <th>交通</th>
+                            <th>住宿參考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="summary-day">D1</td>
+                            <td>廈門→哈爾濱 (聖索菲亞/中央大街)</td>
+                            <td>飛機</td>
+                            <td>哈爾濱</td>
+                        </tr>
+                        <tr>
+                            <td class="summary-day">D2</td>
+                            <td>哈爾濱→亞布力 (滑雪體驗)</td>
+                            <td>旅遊巴士</td>
+                            <td>亞布力</td>
+                        </tr>
+                        <tr>
+                            <td class="summary-day">D3</td>
+                            <td>亞布力→童話雪鄉</td>
+                            <td>旅遊巴士</td>
+                            <td>雪鄉炕</td>
+                        </tr>
+                        <tr>
+                            <td class="summary-day">D4</td>
+                            <td>雪鄉→哈爾濱 (冰雪大世界)</td>
+                            <td>旅遊巴士</td>
+                            <td>哈爾濱</td>
+                        </tr>
+                        <tr>
+                            <td class="summary-day">D5</td>
+                            <td>哈爾濱→送機返程</td>
+                            <td>飛機</td>
+                            <td>家</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-  
-  </header>
+        <section class="day-section">
+            <div class="day-header" onclick="toggleDetails(this)">
+                <div>
+                    <span class="day-badge">Day 1</span>
+                    <span class="day-title">廈門 ✈️ 哈爾濱 (東方小巴黎)</span>
+                </div>
+                <span class="toggle-btn">+</span>
+            </div>
+            <div class="day-details">
+                <div class="img-gallery">
+                    <div class="img-box" style="background-image: url('image/01.jpg');"><span class="img-caption">聖索菲亞教堂</span></div>
+                    <div class="img-box" style="background-image: url('image/02.jpg');"><span class="img-caption">中央大街</span></div>
+                </div>
 
-  <div class="overview-box">
-    <div class="reason-card">
-      <h3>❄️ 產品推薦理由</h3>
-      <p><strong>邂逅童話雪世界：</strong>沒有人能逃脫雪鄉的美，這裡有你無法割舍的東北情懷。</p>
-      <p style="margin-top:10px;"><strong>至尊景點一網打盡：</strong><br>
-      中國雪鄉、森林小火車、亞布力滑雪、中央大街、冰雪畫廊、夢幻家園、哈爾濱冰雪大世界...特色景點一次滿足！</p>
+                <div class="info-grid">
+                    <div class="info-item">✈️ 廈門機場航班：MF8079 (07:40-12:05)</div>
+                    <div class="info-item">🍽️ 用餐：導遊推薦午餐-用餐後入住酒店</div>
+                    <div class="info-item">🏨 住宿：參考-哈爾濱中央大街璞硯 (5鑽)</div>
+                </div>
+
+                <span class="spot-highlight">★ 聖·索菲亞教堂</span>
+                <p class="desc-text">外觀遠東最大的東正教教堂廣場，建於公元1903年，用作沙俄東西伯利亞第四步兵師的隨軍教堂。巍峨壯美，構成了哈爾濱獨具異國情調的人文景觀和城市風情。</p>
+
+                <span class="spot-highlight">★ 中央大街</span>
+                <p class="desc-text">遊覽異國風情的百年老街(遊覽時間30分鐘)，走在中央大街，感受百年積澱的文化底蘊。</p>
+
+                <div class="warm-tips">
+                    <h4>💡 溫馨提示 (D1)</h4>
+                    <ul>
+                        <li>出行前一天我司旅遊管家會與您聯繫，告知注意事項（請保持手機暢通）。</li>
+                        <li>搭乘飛機/火車抵達後，抵達後請開手機，接機/站人員會將您送至飯店，抵達飯店後方前台憑有效身分證件領取房卡入住。房卡押金自理</li>
+                        <li>東北室外溫度低，電子產品容易跑電，建議多準備備用電池。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-section">
+            <div class="day-header" onclick="toggleDetails(this)">
+                <div>
+                    <span class="day-badge">Day 2</span>
+                    <span class="day-title">
+                        哈爾濱 🚌 亞布力-滑雪體驗(全程 200 公里，車行約
+                        3.5 小時)
+                    </span>
+                </div>
+                <span class="toggle-btn">+</span>
+            </div>
+            <div class="day-details">
+                <div class="img-gallery">
+                    <div class="img-box" style="background-image: url('image/03.jpg');"><span class="img-caption">亞布力滑雪</span></div>
+                    <div class="img-box" style="background-image: url('image/04.jpg'); "><span class="img-caption">林海雪原</span></div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">🍽️ 早餐：酒店含早餐</div>
+                    <div class="info-item">🏨 住宿：亞布力五鑽頤朵</div>
+                </div>
+
+                <p class="desc-text">早餐後乘坐「雪國巴士」前往【亞布力度假區】，沿途欣賞林海雪原。行車途中，導遊或司機將教大家唱二人轉，體驗東北豪爽文化。</p>
+
+                <span class="spot-highlight">★ 亞布力初級滑雪【初級滑雪 3 小時】(含雪板、雪鞋、雪仗；安全起見，建議初學者自請教練費用自理)</span>
+                <p class="desc-text">中國目前最大、功能最全的綜合性滑雪場，世界大冬會舉辦地。體驗驚險而刺激的貴族滑雪運動。</p>
+
+                <span class="spot-highlight">★ 【亞布力網紅森林小火車】</span>
+                <p class="desc-text">粉色車廂少女心爆棚！車身繪有黑龍江省旅遊吉祥物爽爽虎和不同語言的我愛你。全程9公里(全程約1小時)，穿梭在白色森林中，帶你走進童話世界。</p>
+
+                <span class="spot-highlight">★ 馬拉爬犁</span>
+                <p class="desc-text">皮鞭炸響，馬兒飛馳！穿林海跨雪原，體驗做「土匪」的樂趣，讓你真正的感受一下東北生活。</p>
+
+                <div class="warm-tips">
+                    <h4>💡 滑雪安全提示 (D2)</h4>
+                    <ul>
+                        <li>檢查雪具是否完整：雪鞋、雪板、雪仗是否完整並配套。</li>
+                        <li>摔倒時收頷近胸，放鬆肢體，不要硬撐，一旦失去重心，不要試圖重新取得控制。</li>
+                        <li>不滑雪時，務必不要站在滑雪道上。</li>
+                        <li>建議在當地聘請專業教練 (費用自理) 以保證安全。</li>
+                        <li>滑雪時最好輕裝上陣，不要帶貴重物品，最好穿滑雪服、配戴滑雪眼鏡。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-section">
+            <div class="day-header" onclick="toggleDetails(this)">
+                <div>
+                    <span class="day-badge">Day 3</span>
+                    <span class="day-title">亞布力 🚌 童話雪鄉 (約2.5小時)</span>
+                </div>
+                <span class="toggle-btn">+</span>
+            </div>
+            <div class="day-details">
+                <div class="img-gallery">
+                    <div class="img-box" style="background-image: url('image/05.jpg');"><span class="img-caption">雪鄉夜景</span></div>
+                    <div class="img-box" style="background-image: url('image/06.jpg');"><span class="img-caption">雪鄉景區</span></div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">🍽️ 早餐：酒店含早餐</div>
+                    <div class="info-item">🏨 住宿：雪鄉初見酒店 (2人一室)</div>
+                </div>
+
+                <p class="desc-text">乘車赴【中國雪鄉】，這裡有北國最高的山峰，最密的林海，最厚的積雪，最潔淨透明的陽光。</p>
+
+                <span class="spot-highlight">★ 棒槌山觀光棧道 & 雪韻大街</span>
+                <p class="desc-text">登上棧道體驗雪鄉後山“小”穿越，俯瞰雪色民風的童話世界。漫步雪韻大街，打卡網紅景點，拍攝「潑水成冰」（請自備水杯），參觀雪鄉歷史文化展覽館。</p>
+
+                <span class="spot-highlight">★ 夢幻家園 + 東北二人轉</span>
+                <p class="desc-text">觀賞自然形成的「雪蘑菇」，這是雪鄉的標誌性景觀（中央電視台取景地）。晚上體驗讓您捧腹大笑的東北二人轉表演！</p>
+
+                <span class="spot-highlight">★ 嗨翻雪鄉之夜</span>
+                <p class="desc-text">夜幕降臨，紅燈籠亮起。參加大型的「雪地蹦迪」、花車巡遊、扭秧歌。感受老東北特色，做一天雪鄉人（花車巡遊、扭秧歌表演、雪地蹦迪屬贈送項目，如遇天氣、景區政策性關閉、時間調整等原因導致無法參加，費用不退，敬請諒解）。</p>
+
+                <div class="warm-tips">
+                    <h4>💡 雪鄉生存指南 (D3)</h4>
+                    <ul>
+                        <li>雪鄉由於當地條件有限，用餐質量無法和市區相比，請做好心理準備，可帶點吃的上去。</li>
+                        <li>南北方水質差異大，建議多喝熱水避免因水土不服出現腸胃不適。</li>
+                        <li>雪鄉景區不允許社會車輛入園，需乘倒站車。建議分裝隨身背包，大件行禮放在車上。</li>
+                        <li>雪鄉條件有限，請自備洗漱用品及拖鞋。</li>
+                        <li>雪鄉景區為林區，酒店可能會出現七星瓢蟲，請諒解。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-section">
+            <div class="day-header" onclick="toggleDetails(this)">
+                <div>
+                    <span class="day-badge">Day 4</span>
+                    <span class="day-title">雪鄉 🚌 哈爾濱 (冰雪畫廊+大世界)</span>
+                </div>
+                <span class="toggle-btn">+</span>
+            </div>
+            <div class="day-details">
+                <div class="img-gallery">
+                    <div class="img-box" style="background-image: url('image/08.jpg');"><span class="img-caption">冰雪大世界</span></div>
+                    <div class="img-box" style="background-image: url('image/09.jpg');"><span class="img-caption">雪地摩托</span></div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">🍽️ 早餐：酒店含早餐</div>
+                    <div class="info-item">🏨 住宿：哈爾濱中央大街璞硯</div>
+                </div>
+
+                <p class="desc-text">早餐後，穿越亞雪盤山公路，欣賞魔幻高山霧凇嶺，這是最美的賞雪旅游交通線路，被譽為東方的“阿爾卑斯之山”！</p>
+
+                <span class="spot-highlight">★ 大禿頂子山 + 冰雪畫廊 + 雪地摩托</span>
+                <p class="desc-text">體驗十里畫廊叢林穿越，乘坐雪地摩托體驗雪地“飛馳”。登白樺林棧道，賞原始雪景。</p>
+
+                <span class="spot-highlight">★ 威虎寨民俗</span>
+                <p class="desc-text">進寨需對黑話（如：天王蓋地虎、寶塔鎮河妖），體驗東北淳樸的歡迎儀式和民俗。</p>
+
+                <span class="spot-highlight">★ 哈爾濱冰雪大世界</span>
+                <p class="desc-text">展示了北方名城哈爾濱冰雪文化和冰雪旅遊魅力後入住休息。</p>
+
+                <div class="warm-tips">
+                    <h4>💡 提示 (D4)</h4>
+                    <ul>
+                        <li>如遇大雪高速封路，區間汽車可能改為火車硬座或二等座，火車票費用客人自理。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="day-section">
+            <div class="day-header" onclick="toggleDetails(this)">
+                <div>
+                    <span class="day-badge">Day 5</span>
+                    <span class="day-title">哈爾濱 ✈️ 溫暖的家</span>
+                </div>
+                <span class="toggle-btn">+</span>
+            </div>
+            <div class="day-details">
+                <div class="info-grid">
+                    <div class="info-item">✈️ 回程航班：MF8080 (13:15-17:35)</div>
+                </div>
+                <p class="desc-text">早餐後，根據返程航班送機，結束愉快的行程！</p>
+                <div class="warm-tips">
+                    <h4>💡 提示</h4>
+                    <ul>
+                        <li>行程時間安排可能會因航班、天氣、路況等不可抗力因素，在不影響行程和接待標準前提下，經全體遊客協商同意後，進行遊覽順序調整。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="precautions-section">
+            <h2>📌 東北旅遊特別注意事項</h2>
+
+            <div class="precautions-group">
+                <h3>I. 🧤 禦寒裝備與衣著</h3>
+                <ul>
+                    <li>東北冬季溫度低（0℃至-20℃，或達-30℃以上），室內外溫差大，衣著盡量寬鬆，便於穿戴。</li>
+                    <li><span class="tip-highlight">必備：</span>請提前自備冬季戶外防寒衣帽、高幫防滑雪地靴、雪杖、太陽鏡（防雪地反光）、防凍霜、常用藥品。</li>
+                    <li><span class="tip-highlight">推薦穿搭：</span>頭部（內加絨帽子、滑雪眼鏡、口罩）、上身（加絨保暖衣＋抓絨＋羽絨服）、手套（內加絨、防水、收口）、腳部（一雙厚襪子＋略大一號的防滑雪地靴）。</li>
+                    <li><span class="tip-highlight">保暖原則：</span>進入房間或車內要**打開外衣**，把寒氣散放出來；在室外活動，出了汗也不可解開外衣讓冷風吹。</li>
+                </ul>
+            </div>
+
+            <div class="precautions-group">
+                <h3>II. 🍎 飲食與健康</h3>
+                <ul>
+                    <li><span class="tip-highlight">多喝水：</span>北方氣候乾燥，室內有暖氣，請一定多喝水；建議準備保溫壺，並攜帶常用藥品。</li>
+                    <li><span class="tip-highlight">謹慎冷食：</span>南北方水質差異大，建議客人<span class="tip-highlight">謹慎食用</span>凍梨、凍柿子、冰糖葫蘆等冰涼食物，避免因水土不服出現腸胃不適或腹瀉。</li>
+                    <li><span class="tip-highlight">口味：</span>東北飲食以咸粘燉為主，口味較重，如不適應請及早向導遊提出。</li>
+                    <li><span class="tip-highlight">熱量：</span>氣溫較低，可隨身攜帶巧克力或牛肉乾等小包零食，隨時補充熱量。</li>
+                </ul>
+            </div>
+
+            <div class="precautions-group">
+                <h3>III. 📷 物品與住宿</h3>
+                <ul>
+                    <li><span class="tip-highlight">雪鄉：</span><span class="tip-highlight">雪鄉不提供一次性洗漱用品</span>，請務必提前自帶。雪鄉條件有限，請諒解房間可能出現異味或有瓢蟲等現象。</li>
+                    <li><span class="tip-highlight">電子產品：</span>相機、手機等電子產品在寒冷條件下容易跑電，建議多準備備用電池。</li>
+                    <li><span class="tip-highlight">相機保護：</span>從室外進入室內時，切記將相機用厚布包好或放入膠袋內保護，防止因溫差過大出現「反霜」現象。</li>
+                    <li><span class="tip-highlight">財物：</span>貴重物品請隨身攜帶，請提防與您搭訕的陌生人。</li>
+                    <li><span class="tip-highlight">酒店押金：</span>全程入住時請出示證件並交付雜費押金，次日退還。</li>
+                </ul>
+            </div>
+
+            <div class="precautions-group">
+                <h3>IV. ⚠️ 旅遊安全與責任</h3>
+                <ul>
+                    <li><span class="tip-highlight">防滑：</span>在冰面或雪地上行走時，要記住「走路不要高抬腳，小步滑行跌不倒」。膝蓋應微屈，身體重心向前傾。</li>
+                    <li><span class="tip-highlight">滑雪：</span>初學者應循序漸進，量力而行。跌倒時最好舉起四肢任其順勢滑動，不要急於掙扎而起。</li>
+                    <li><span class="tip-highlight">購物：</span>雪鄉景區商業化氣息濃厚，自費項目較多，請<span class="tip-highlight">謹慎消費購買</span>。</li>
+                    <li><span class="tip-highlight">不可抗力：</span>行程中遇天氣原因、航班取消、下雪封路、交通事故等不可抗力因素，所產生的<span class="tip-highlight">費用及額外損失由客人自理</span>。旅行社只負責協調安排。</li>
+                    <li><span class="tip-highlight">投訴依據：</span>遊客的投訴以<span class="tip-highlight">遊客自行填寫的意見單</span>為主要依據。</li>
+                </ul>
+            </div>
+        </section>
+        <section class="cost-section">
+            <h2>💰 費用與包含明細</h2>
+            <div class="total-price">總費用約：83,070 元 (7人)</div>
+
+            <table class="cost-table">
+                <tr>
+                    <th>項目</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <td>基本團費</td>
+                    <td>10,720元/人 x 7人 = 75,040元 (2人一間)</td>
+                </tr>
+                <tr>
+                    <td>單房差</td>
+                    <td>4,600元 (1位單獨住一間)</td>
+                </tr>
+                <tr>
+                    <td>機票差價</td>
+                    <td>實開補差價共 3,430元 (按3200元/人核算，多退少補)</td>
+                </tr>
+                <tr>
+                    <td>門票包含</td>
+                    <td>冰雪大世界、亞布力滑雪、森林小火車、馬拉爬犁、雪鄉、夢幻家園、雪地摩托、冰雪畫廊等首道大門票 (共$1003元/人)</td>
+                </tr>
+                <tr>
+                    <td>交通</td>
+                    <td>9座商務車 (3年內新車，行李箱空間較小請留意)</td>
+                </tr>
+                <tr>
+                    <td>導遊服務</td>
+                    <td>全程當地專職導遊服務</td>
+                </tr>
+            </table>
+
+            <div class="warm-tips" style="margin-top:20px; color:#555; background:#fff;">
+                <strong>⚠️ 費用不含：</strong> 個人消費、行程外自由活動餐費、不可抗力產生的額外費用。
+            </div>
+        </section>
+
     </div>
 
-    <h3 style="margin-bottom: 10px; color:#333;">📅 秒懂行程 (行程概況)</h3>
-    <div class="summary-table-wrapper">
-      <table class="summary-table">
-        <thead>
-          <tr>
-            <th>天數</th>
-            <th>行程概況</th>
-            <th>交通</th>
-            <th>住宿參考</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="summary-day">D1</td>
-            <td>廈門→哈爾濱 (聖索菲亞/中央大街)</td>
-            <td>飛機</td>
-            <td>哈爾濱</td>
-          </tr>
-          <tr>
-            <td class="summary-day">D2</td>
-            <td>哈爾濱→亞布力 (滑雪體驗)</td>
-            <td>旅遊巴士</td>
-            <td>亞布力</td>
-          </tr>
-          <tr>
-            <td class="summary-day">D3</td>
-            <td>亞布力→童話雪鄉</td>
-            <td>旅遊巴士</td>
-            <td>雪鄉炕</td>
-          </tr>
-          <tr>
-            <td class="summary-day">D4</td>
-            <td>雪鄉→哈爾濱 (冰雪大世界)</td>
-            <td>旅遊巴士</td>
-            <td>哈爾濱</td>
-          </tr>
-          <tr>
-            <td class="summary-day">D5</td>
-            <td>哈爾濱→送機返程</td>
-            <td>飛機</td>
-            <td>家</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <section class="day-section">
-    <div class="day-header" onclick="toggleDetails(this)">
-      <div>
-        <span class="day-badge">Day 1</span>
-        <span class="day-title">廈門 ✈️ 哈爾濱 (東方小巴黎)</span>
-      </div>
-      <span class="toggle-btn">+</span>
-    </div>
-    <div class="day-details">
-      <div class="img-gallery">
-        <div class="img-box" style="background-image: url('image/01.jpg');"><span class="img-caption">聖索菲亞教堂</span></div>
-        <div class="img-box" style="background-image: url('image/02.jpg');"><span class="img-caption">中央大街</span></div>
-      </div>
+    <script>
+        function toggleDetails(header) {
+            const details = header.nextElementSibling;
+            const btn = header.querySelector('.toggle-btn');
 
-      <div class="info-grid">
-          <div class="info-item">✈️ 廈門機場航班：MF8079 (07:40-12:05)</div>
-          <div class="info-item">🍽️ 用餐：導遊推薦午餐-用餐後入住酒店</div>
-          <div class="info-item">🏨 住宿：參考-哈爾濱中央大街璞硯 (5鑽)</div>
-      </div>
-
-      <span class="spot-highlight">★ 聖·索菲亞教堂</span>
-      <p class="desc-text">外觀遠東最大的東正教教堂廣場，建於公元1903年，用作沙俄東西伯利亞第四步兵師的隨軍教堂。巍峨壯美，構成了哈爾濱獨具異國情調的人文景觀和城市風情。</p>
-
-      <span class="spot-highlight">★ 中央大街</span>
-      <p class="desc-text">遊覽異國風情的百年老街(遊覽時間30分鐘)，走在中央大街，感受百年積澱的文化底蘊。</p>
-
-      <div class="warm-tips">
-        <h4>💡 溫馨提示 (D1)</h4>
-        <ul>
-            <li>出行前一天我司旅遊管家會與您聯繫，告知注意事項（請保持手機暢通）。</li>
-            <li>搭乘飛機/火車抵達後，抵達後請開手機，接機/站人員會將您送至飯店，抵達飯店後方前台憑有效身分證件領取房卡入住。房卡押金自理</li>
-            <li>東北室外溫度低，電子產品容易跑電，建議多準備備用電池。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="day-section">
-    <div class="day-header" onclick="toggleDetails(this)">
-      <div>
-        <span class="day-badge">Day 2</span>
-        <span class="day-title">
-            哈爾濱 🚌 亞布力-滑雪體驗(全程 200 公里，車行約
-            3.5 小時)
-        </span>
-      </div>
-      <span class="toggle-btn">+</span>
-    </div>
-    <div class="day-details">
-      <div class="img-gallery">
-        <div class="img-box" style="background-image: url('image/03.jpg');"><span class="img-caption">亞布力滑雪</span></div>
-        <div class="img-box" style="background-image: url('image/04.jpg'); "><span class="img-caption">林海雪原</span></div>
-      </div>
-
-      <div class="info-grid">
-        <div class="info-item">🍽️ 早餐：酒店含早餐</div>
-        <div class="info-item">🏨 住宿：亞布力五鑽頤朵</div>
-      </div>
-
-      <p class="desc-text">早餐後乘坐「雪國巴士」前往【亞布力度假區】，沿途欣賞林海雪原。行車途中，導遊或司機將教大家唱二人轉，體驗東北豪爽文化。</p>
-
-      <span class="spot-highlight">★ 亞布力初級滑雪【初級滑雪 3 小時】(含雪板、雪鞋、雪仗；安全起見，建議初學者自請教練費用自理)</span>
-      <p class="desc-text">中國目前最大、功能最全的綜合性滑雪場，世界大冬會舉辦地。體驗驚險而刺激的貴族滑雪運動。</p>
-      
-      <span class="spot-highlight">★ 【亞布力網紅森林小火車】</span>
-      <p class="desc-text">粉色車廂少女心爆棚！車身繪有黑龍江省旅遊吉祥物爽爽虎和不同語言的我愛你。全程9公里(全程約1小時)，穿梭在白色森林中，帶你走進童話世界。</p>
-      
-      <span class="spot-highlight">★ 馬拉爬犁</span>
-      <p class="desc-text">皮鞭炸響，馬兒飛馳！穿林海跨雪原，體驗做「土匪」的樂趣，讓你真正的感受一下東北生活。</p>
-
-      <div class="warm-tips">
-        <h4>💡 滑雪安全提示 (D2)</h4>
-        <ul>
-          <li>檢查雪具是否完整：雪鞋、雪板、雪仗是否完整並配套。</li>
-          <li>摔倒時收頷近胸，放鬆肢體，不要硬撐，一旦失去重心，不要試圖重新取得控制。</li>
-          <li>不滑雪時，務必不要站在滑雪道上。</li>
-          <li>建議在當地聘請專業教練 (費用自理) 以保證安全。</li>
-          <li>滑雪時最好輕裝上陣，不要帶貴重物品，最好穿滑雪服、配戴滑雪眼鏡。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="day-section">
-    <div class="day-header" onclick="toggleDetails(this)">
-      <div>
-        <span class="day-badge">Day 3</span>
-        <span class="day-title">亞布力 🚌 童話雪鄉 (約2.5小時)</span>
-      </div>
-      <span class="toggle-btn">+</span>
-    </div>
-    <div class="day-details">
-        <div class="img-gallery">
-            <div class="img-box" style="background-image: url('image/05.jpg');"><span class="img-caption">雪鄉夜景</span></div>
-            <div class="img-box" style="background-image: url('image/06.jpg');"><span class="img-caption">雪鄉景區</span></div>
-        </div>
-
-      <div class="info-grid">
-        <div class="info-item">🍽️ 早餐：酒店含早餐</div>
-        <div class="info-item">🏨 住宿：雪鄉初見酒店 (2人一室)</div>
-      </div>
-
-      <p class="desc-text">乘車赴【中國雪鄉】，這裡有北國最高的山峰，最密的林海，最厚的積雪，最潔淨透明的陽光。</p>
-
-      <span class="spot-highlight">★ 棒槌山觀光棧道 & 雪韻大街</span>
-      <p class="desc-text">登上棧道體驗雪鄉後山“小”穿越，俯瞰雪色民風的童話世界。漫步雪韻大街，打卡網紅景點，拍攝「潑水成冰」（請自備水杯），參觀雪鄉歷史文化展覽館。</p>
-
-      <span class="spot-highlight">★ 夢幻家園 + 東北二人轉</span>
-      <p class="desc-text">觀賞自然形成的「雪蘑菇」，這是雪鄉的標誌性景觀（中央電視台取景地）。晚上體驗讓您捧腹大笑的東北二人轉表演！</p>
-
-      <span class="spot-highlight">★ 嗨翻雪鄉之夜</span>
-      <p class="desc-text">夜幕降臨，紅燈籠亮起。參加大型的「雪地蹦迪」、花車巡遊、扭秧歌。感受老東北特色，做一天雪鄉人（花車巡遊、扭秧歌表演、雪地蹦迪屬贈送項目，如遇天氣、景區政策性關閉、時間調整等原因導致無法參加，費用不退，敬請諒解）。</p>
-
-      <div class="warm-tips">
-        <h4>💡 雪鄉生存指南 (D3)</h4>
-        <ul>
-          <li>雪鄉由於當地條件有限，用餐質量無法和市區相比，請做好心理準備，可帶點吃的上去。</li>
-          <li>南北方水質差異大，建議多喝熱水避免因水土不服出現腸胃不適。</li>
-          <li>雪鄉景區不允許社會車輛入園，需乘倒站車。建議分裝隨身背包，大件行禮放在車上。</li>
-          <li>雪鄉條件有限，請自備洗漱用品及拖鞋。</li>
-          <li>雪鄉景區為林區，酒店可能會出現七星瓢蟲，請諒解。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="day-section">
-    <div class="day-header" onclick="toggleDetails(this)">
-      <div>
-        <span class="day-badge">Day 4</span>
-        <span class="day-title">雪鄉 🚌 哈爾濱 (冰雪畫廊+大世界)</span>
-      </div>
-      <span class="toggle-btn">+</span>
-    </div>
-    <div class="day-details">
-      <div class="img-gallery">
-        <div class="img-box" style="background-image: url('image/08.jpg');"><span class="img-caption">冰雪大世界</span></div>
-        <div class="img-box" style="background-image: url('image/09.jpg');"><span class="img-caption">雪地摩托</span></div>
-      </div>
-
-      <div class="info-grid">
-        <div class="info-item">🍽️ 早餐：酒店含早餐</div>
-        <div class="info-item">🏨 住宿：哈爾濱中央大街璞硯</div>
-      </div>
-
-      <p class="desc-text">早餐後，穿越亞雪盤山公路，欣賞魔幻高山霧凇嶺，這是最美的賞雪旅游交通線路，被譽為東方的“阿爾卑斯之山”！</p>
-
-      <span class="spot-highlight">★ 大禿頂子山 + 冰雪畫廊 + 雪地摩托</span>
-      <p class="desc-text">體驗十里畫廊叢林穿越，乘坐雪地摩托體驗雪地“飛馳”。登白樺林棧道，賞原始雪景。</p>
-
-      <span class="spot-highlight">★ 威虎寨民俗</span>
-      <p class="desc-text">進寨需對黑話（如：天王蓋地虎、寶塔鎮河妖），體驗東北淳樸的歡迎儀式和民俗。</p>
-
-      <span class="spot-highlight">★ 哈爾濱冰雪大世界</span>
-      <p class="desc-text">展示了北方名城哈爾濱冰雪文化和冰雪旅遊魅力後入住休息。</p>
-
-      <div class="warm-tips">
-        <h4>💡 提示 (D4)</h4>
-        <ul>
-          <li>如遇大雪高速封路，區間汽車可能改為火車硬座或二等座，火車票費用客人自理。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="day-section">
-    <div class="day-header" onclick="toggleDetails(this)">
-      <div>
-        <span class="day-badge">Day 5</span>
-        <span class="day-title">哈爾濱 ✈️ 溫暖的家</span>
-      </div>
-      <span class="toggle-btn">+</span>
-    </div>
-    <div class="day-details">
-      <div class="info-grid">
-        <div class="info-item">✈️ 回程航班：MF8080 (13:15-17:35)</div>
-      </div>
-      <p class="desc-text">早餐後，根據返程航班送機，結束愉快的行程！</p>
-      <div class="warm-tips">
-        <h4>💡 提示</h4>
-        <ul>
-          <li>行程時間安排可能會因航班、天氣、路況等不可抗力因素，在不影響行程和接待標準前提下，經全體遊客協商同意後，進行遊覽順序調整。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="precautions-section">
-    <h2>📌 東北旅遊特別注意事項</h2>
-
-    <div class="precautions-group">
-      <h3>I. 🧤 禦寒裝備與衣著</h3>
-      <ul>
-        <li>東北冬季溫度低（0℃至-20℃，或達-30℃以上），室內外溫差大，衣著盡量寬鬆，便於穿戴。</li>
-        <li><span class="tip-highlight">必備：</span>請提前自備冬季戶外防寒衣帽、高幫防滑雪地靴、雪杖、太陽鏡（防雪地反光）、防凍霜、常用藥品。</li>
-        <li><span class="tip-highlight">推薦穿搭：</span>頭部（內加絨帽子、滑雪眼鏡、口罩）、上身（加絨保暖衣＋抓絨＋羽絨服）、手套（內加絨、防水、收口）、腳部（一雙厚襪子＋略大一號的防滑雪地靴）。</li>
-        <li><span class="tip-highlight">保暖原則：</span>進入房間或車內要**打開外衣**，把寒氣散放出來；在室外活動，出了汗也不可解開外衣讓冷風吹。</li>
-      </ul>
-    </div>
-
-    <div class="precautions-group">
-      <h3>II. 🍎 飲食與健康</h3>
-      <ul>
-        <li><span class="tip-highlight">多喝水：</span>北方氣候乾燥，室內有暖氣，請一定多喝水；建議準備保溫壺，並攜帶常用藥品。</li>
-        <li><span class="tip-highlight">謹慎冷食：</span>南北方水質差異大，建議客人<span class="tip-highlight">謹慎食用</span>凍梨、凍柿子、冰糖葫蘆等冰涼食物，避免因水土不服出現腸胃不適或腹瀉。</li>
-        <li><span class="tip-highlight">口味：</span>東北飲食以咸粘燉為主，口味較重，如不適應請及早向導遊提出。</li>
-        <li><span class="tip-highlight">熱量：</span>氣溫較低，可隨身攜帶巧克力或牛肉乾等小包零食，隨時補充熱量。</li>
-      </ul>
-    </div>
-
-    <div class="precautions-group">
-      <h3>III. 📷 物品與住宿</h3>
-      <ul>
-        <li><span class="tip-highlight">雪鄉：</span><span class="tip-highlight">雪鄉不提供一次性洗漱用品</span>，請務必提前自帶。雪鄉條件有限，請諒解房間可能出現異味或有瓢蟲等現象。</li>
-        <li><span class="tip-highlight">電子產品：</span>相機、手機等電子產品在寒冷條件下容易跑電，建議多準備備用電池。</li>
-        <li><span class="tip-highlight">相機保護：</span>從室外進入室內時，切記將相機用厚布包好或放入膠袋內保護，防止因溫差過大出現「反霜」現象。</li>
-        <li><span class="tip-highlight">財物：</span>貴重物品請隨身攜帶，請提防與您搭訕的陌生人。</li>
-        <li><span class="tip-highlight">酒店押金：</span>全程入住時請出示證件並交付雜費押金，次日退還。</li>
-      </ul>
-    </div>
-
-    <div class="precautions-group">
-      <h3>IV. ⚠️ 旅遊安全與責任</h3>
-      <ul>
-        <li><span class="tip-highlight">防滑：</span>在冰面或雪地上行走時，要記住「走路不要高抬腳，小步滑行跌不倒」。膝蓋應微屈，身體重心向前傾。</li>
-        <li><span class="tip-highlight">滑雪：</span>初學者應循序漸進，量力而行。跌倒時最好舉起四肢任其順勢滑動，不要急於掙扎而起。</li>
-        <li><span class="tip-highlight">購物：</span>雪鄉景區商業化氣息濃厚，自費項目較多，請<span class="tip-highlight">謹慎消費購買</span>。</li>
-        <li><span class="tip-highlight">不可抗力：</span>行程中遇天氣原因、航班取消、下雪封路、交通事故等不可抗力因素，所產生的<span class="tip-highlight">費用及額外損失由客人自理</span>。旅行社只負責協調安排。</li>
-        <li><span class="tip-highlight">投訴依據：</span>遊客的投訴以<span class="tip-highlight">遊客自行填寫的意見單</span>為主要依據。</li>
-      </ul>
-    </div>
-  </section>
-  <section class="cost-section">
-    <h2>💰 費用與包含明細</h2>
-    <div class="total-price">總費用約：83,070 元 (7人)</div>
-    
-    <table class="cost-table">
-      <tr>
-        <th>項目</th>
-        <th>說明</th>
-      </tr>
-      <tr>
-        <td>基本團費</td>
-        <td>10,720元/人 x 7人 = 75,040元 (2人一間)</td>
-      </tr>
-      <tr>
-        <td>單房差</td>
-        <td>4,600元 (1位單獨住一間)</td>
-      </tr>
-      <tr>
-        <td>機票差價</td>
-        <td>實開補差價共 3,430元 (按3200元/人核算，多退少補)</td>
-      </tr>
-      <tr>
-        <td>門票包含</td>
-        <td>冰雪大世界、亞布力滑雪、森林小火車、馬拉爬犁、雪鄉、夢幻家園、雪地摩托、冰雪畫廊等首道大門票 (共$1003元/人)</td>
-      </tr>
-      <tr>
-        <td>交通</td>
-        <td>9座商務車 (3年內新車，行李箱空間較小請留意)</td>
-      </tr>
-      <tr>
-        <td>導遊服務</td>
-        <td>全程當地專職導遊服務</td>
-      </tr>
-    </table>
-    
-    <div class="warm-tips" style="margin-top:20px; color:#555; background:#fff;">
-      <strong>⚠️ 費用不含：</strong> 個人消費、行程外自由活動餐費、不可抗力產生的額外費用。
-    </div>
-  </section>
-
-</div>
-
-<script>
-  function toggleDetails(header) {
-    const details = header.nextElementSibling;
-    const btn = header.querySelector('.toggle-btn');
-    
-    if (details.classList.contains('active')) {
-      details.classList.remove('active');
-      btn.innerText = '+';
-    } else {
-      details.classList.add('active');
-      btn.innerText = '−';
-    }
-  }
-</script>
+            if (details.classList.contains('active')) {
+                details.classList.remove('active');
+                btn.innerText = '+';
+            } else {
+                details.classList.add('active');
+                btn.innerText = '−';
+            }
+        }
+    </script>
 
 </body>
 
 </html>
+
