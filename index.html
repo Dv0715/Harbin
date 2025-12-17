@@ -460,6 +460,81 @@
             }
         }
 
+        /* 行前清單卡片 */
+        .checklist-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .checklist-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            background: white;
+        }
+
+            .checklist-card h3 {
+                margin-top: 0;
+                font-size: 1.1rem;
+                color: var(--primary);
+                border-bottom: 1px solid #eee;
+                padding-bottom: 8px;
+            }
+
+            .checklist-card ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 10px 0;
+            }
+
+            .checklist-card li {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+                padding-left: 25px;
+                position: relative;
+            }
+
+                .checklist-card li::before {
+                    content: "☑";
+                    position: absolute;
+                    left: 0;
+                    color: var(--check-green);
+                }
+
+        .note-tag {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        /* 準備清單圖片區塊 */
+        .preparation-section {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+            border-top: 5px solid var(--bg-color);
+        }
+
+        .preparation-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .preparation-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
         /* RWD */
         @media (max-width: 600px) {
             .info-grid {
@@ -526,21 +601,52 @@
                 </p>
             </div>
 
-            <section style="margin: 20px; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <h3 style="color: #e74c3c; margin-top: 0;">🎒 出發前別忘了！(點擊可勾選)</h3>
-                <div style="font-size: 0.95rem; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <label><input type="checkbox"> 護照/台胞證</label>
-                    <label><input type="checkbox"> 保溫瓶 (必備！)</label>
-                    <label><input type="checkbox"> 發熱衣/褲</label>
-                    <label><input type="checkbox"> 護唇膏/乳液</label>
-                    <label><input type="checkbox"> 防滑雪地靴</label>
-                    <label><input type="checkbox"> 暖暖包/暖足貼</label>
-                    <label><input type="checkbox"> 行動電源</label>
-                    <label><input type="checkbox"> 常備藥品</label>
-                    <label><input type="checkbox"> 太陽眼鏡</label>
-                    <label><input type="checkbox"> 大量衛生紙(當地很多要錢)</label>
-                    <label><input type="checkbox"> 薄款或短袖睡衣(室內有暖氣)</label>
-                </div>
+            <section class="preparation-section">
+                <h2 class="preparation-title">🎒 行前準備超全清單</h2>
+                <img src="10.jpg" alt="準備清單" class="preparation-img">
+                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">(建議長按圖片儲存，方便隨時檢查行李)</p>
+            </section>
+
+            <style>
+                /* 新增互動清單的 CSS 樣式 */
+                .interactive-list {
+                    list-style: none !important;
+                    padding-left: 0 !important;
+                }
+
+                    .interactive-list li {
+                        padding-left: 0 !important;
+                        margin-bottom: 8px;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                        .interactive-list li::before {
+                            content: "" !important; /* 移除原本的 ☑ 符號 */
+                        }
+
+                    .interactive-list label {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        transition: color 0.3s;
+                    }
+
+                    .interactive-list input[type="checkbox"] {
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 10px;
+                        cursor: pointer;
+                    }
+                        /* 勾選後的視覺效果 */
+                        .interactive-list input[type="checkbox"]:checked + span,
+                        .interactive-list input[type="checkbox"]:checked ~ label,
+                        .interactive-list label:has(input:checked) {
+                            color: #bbb;
+                            text-decoration: line-through;
+                        }
+            </style>
             </section>
 
 
